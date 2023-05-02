@@ -1,0 +1,18 @@
+[package]
+name = "hardbit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nih_plug = { git = "https://github.com/a2aaron/nih-plug.git", rev = "3ddf3a9420bb425da56c0dbd466adee77c756c6d", features = ["vst3", "standalone"]}
+
+[profile.release]
+lto = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[workspace]
+members = ["xtask"]
